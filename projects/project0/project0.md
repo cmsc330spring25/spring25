@@ -91,11 +91,11 @@ Next, you will need to clone this repository to your local filesystem.
     - Clone the project into your current directory `git clone git@github.com:cmsc330spring25/projectzero-YOUR_GITHUB_USERNAME` (you must edit the link with your github username)
     - You can also find this link by clicking the green "Code" button on your project 0 GitHub page and copying the link under "SSH"
 
-The files in the `project0` folder will be used for the [Verify Setup](#verify-setup) section at the bottom.
+The files in the `projectzero` folder will be used for the [Verify Setup](#verify-setup) section at the bottom.
 
 ### Verify Setup
 
-To verify that you have the correct versions installed, run `./public.sh` in the `~/cmsc330spring25/project0/` directory.  You should not get any errors.
+To verify that you have the correct versions installed, run `./public.sh` in the `~/cmsc330spring25/projectzero/` directory.  You should not get any errors.
 
 This will create a file called `p0.report` that will be processed by the autograder in the next steps.
 
