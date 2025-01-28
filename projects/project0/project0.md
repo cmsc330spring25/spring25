@@ -1,7 +1,6 @@
-good morning
 # Project 0: Setup
 
-Due: Wednesday, September 4, 2024 at 11:59 PM
+Due: Sunday, February 9th, 2024 at 11:59 PM
 
 This project is simply to get your system ready. Although you will "submit" this project on Gradescope, it is not counted towards your final grade.  The good-faith attempt (GFA) rule **does not apply** to this project.
 
@@ -199,7 +198,7 @@ You didn't push your changes to GitHub...
     - Run `sudo apt install ocaml-native-compilers camlp4 make m4 curl libssl-dev pkg-config unzip graphviz`
 4. Install and initialize the OCaml package manager
     - Run `sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)` (when prompted for the installation location, just hit enter to select the default)
-        - Run `opam --version`.  You should be on version 2 (followed by some versions; just make sure the major version is 2).
+        - Run `opam --version`.  You should be on version 2.2 or higher.
         - If you encounter any issues, check out [the manual](https://opam.ocaml.org/doc/Install.html)
     - Run `opam init --disable-sandboxing`
       - If it hangs at "Fetching repository information", press Enter. This may take a while. Please be patient
@@ -210,15 +209,15 @@ You didn't push your changes to GitHub...
       - Save and exit the file
     - Run `source ~/.profile` (or the file you just edited)
 5. Initialize OCaml
-    - We will be using OCaml version 4.14.X.  Run `ocaml -version` to check
+    - We will be using OCaml version 5.3.0.  Run `ocaml -version` to check
       which version is currently installed
-    - **If you are already on 4.14.X, you can skip to step #6**, if not, follow the instructions below
-      - If you are on another version, run `opam switch create 4.14.0` (This may take a while. Please be patient)
-      - Run `echo 'eval $(opam env --switch=4.14.0)' >> ~/.bashrc`
+    - **If you are already on 5.3.0, you can skip to step #6**, if not, follow the instructions below
+      - If you are on another version, run `opam switch create 5.3.0` (This may take a while. Please be patient)
+      - Run `echo 'eval $(opam env --switch=5.3.0)' >> ~/.bashrc`
       - **Restart** your shell
       - Ensure you are now on the correct version by running `ocaml -version`
 6. Install OCaml packages
-    - Run `opam install gradescope_submit ocamlfind ounit utop dune qcheck ocamlformat`
+    - Run `opam install gradescope_submit ocamlfind ounit utop dune qcheck ocamlformat ppx_deriving`
       - If you get the message "opam believes some required external dependencies are missing", select "Run apt-get to install them"
 7. Install Rust
     - Go to [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and run the installation command provided. Make sure you are running the WSL command provided, *not* downloading Rust for Windows.
@@ -244,17 +243,17 @@ Check the [Special macOS Instructions](#special-macos-instructions) to check if 
     - When prompted to modify `~/.zshrc` or `~/.bash_profile` (or a similar file), **do not** modify the file, type `N` or `5`
     - Run  `eval $(opam env)`
 4. Initialize OCaml
-    - We will be using OCaml version 4.14.X.  Run `ocaml -version` to check
+    - We will be using OCaml version 5.3.0.  Run `ocaml -version` to check
       which version is currently installed
-    - **If you are already on 4.14.X, you can skip to step #5**, if not, follow the instructions below
-      - If you are on another version, run `opam switch create 4.14.0` (This may take a while. Please be patient)
+    - **If you are already on 5.3.0, you can skip to step #5**, if not, follow the instructions below
+      - If you are on another version, run `opam switch create 5.3.0` (This may take a while. Please be patient)
       - Ensure that all new shells open using the correct ocaml version. First, do `echo $SHELL`.
-        - If `echo $SHELL` gives `/bin/zsh`, run `echo 'eval $(opam env --switch=4.14.0)' >> ~/.zshrc`
-        - If `echo $SHELL` gives `/bin/bash`, run `echo 'eval $(opam env --switch=4.14.0)' >> ~/.bashrc`
+        - If `echo $SHELL` gives `/bin/zsh`, run `echo 'eval $(opam env --switch=5.3.0)' >> ~/.zshrc`
+        - If `echo $SHELL` gives `/bin/bash`, run `echo 'eval $(opam env --switch=5.3.0)' >> ~/.bashrc`
       - **Restart** your shell
       - Ensure you are now on the correct version by running `ocaml -version`
 5. Install OCaml packages
-    - Run `opam install gradescope_submit ocamlfind ounit utop dune qcheck ocamlformat`
+    - Run `opam install gradescope_submit ocamlfind ounit utop dune qcheck ocamlformat ppx_deriving`
       - If you get the message "opam believes some required external dependencies are missing", select "Run brew to install them"
       - Run `eval $(opam config env)`
 6. Install Rust
@@ -288,21 +287,21 @@ These instructions assume you have a Debian-based system (e.g. Ubuntu) using the
     - Run `sudo apt install ocaml-native-compilers camlp4 make m4 curl libssl-dev pkg-config graphviz`
 2. Install and initialize the OCaml package manager
     - Run `sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)` (when prompted for the installation location, just hit enter to select the default)
-      - Run `opam --version`.  You should be on version 2 (followed by some versions, just make sure the major version is 2).  Check out [the manual](https://opam.ocaml.org/doc/Install.html) if this is not the case, you may have to follow special directions for your particular operating system and version.
+      - Run `opam --version`.  You should be on version 2.2 or higher.  Check out [the manual](https://opam.ocaml.org/doc/Install.html) if this is not the case, you may have to follow special directions for your particular operating system and version.
       - If you encounter any issues, or are running a different flavor of Linux, check out [the manual](https://opam.ocaml.org/doc/Install.html)
     - Run `opam init`
       - If it hangs at "Fetching repository information" press Enter. (This may take a while. Please be patient)
       - When prompted to modify `~/.profile` (or another file), **do not** modify the file, type `N` or `5`
     - Run `eval $(opam env)`
 3. Initialize OCaml
-    - We will be using OCaml version 4.14.X. Run `ocaml -version` to check which version is currently installed
-    - **If you are already on version 4.14.X, you can skip to step #4**, if not, follow the instructions below
-      - If you are on another version, run `opam switch create 4.14.0` (This may take a while. Please be patient)
-      - Run `echo 'eval $(opam env --switch=4.14.0)' >> ~/.bashrc`
+    - We will be using OCaml version 5.3.X. Run `ocaml -version` to check which version is currently installed
+    - **If you are already on version 5.3.X, you can skip to step #4**, if not, follow the instructions below
+      - If you are on another version, run `opam switch create 5.3.0` (This may take a while. Please be patient)
+      - Run `echo 'eval $(opam env --switch=5.3.0)' >> ~/.bashrc`
       - **Restart** your shell
       - Ensure you are now on the correct version by running `ocaml -version`
 4. Install OCaml packages
-    - Run `opam install gradescope_submit ocamlfind ounit utop dune qcheck ocamlformat`
+    - Run `opam install gradescope_submit ocamlfind ounit utop dune qcheck ocamlformat ppx_deriving`
 5. Install Rust
     - Go to [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and run the installation command provided
     - If prompted, just select the defaults
