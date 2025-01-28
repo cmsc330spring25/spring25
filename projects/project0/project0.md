@@ -88,7 +88,7 @@ Next, you will need to clone this repository to your local filesystem.
 3. Create a directory for your 330 projects, I recommend `mkdir ~/cmsc330spring24`
 4. Clone project 0 into that directory
     - Navigate to your 330 directory `cd ~/cmsc330spring25` 
-    - Clone the project into your current directory `git clone git@github.com:cmsc330spring25/p0-YOUR_GITHUB_USERNAME` (you must edit the link with your github username)
+    - Clone the project into your current directory `git clone git@github.com:cmsc330spring25/projectzero-YOUR_GITHUB_USERNAME` (you must edit the link with your github username)
     - You can also find this link by clicking the green "Code" button on your project 0 GitHub page and copying the link under "SSH"
 
 The files in the `project0` folder will be used for the [Verify Setup](#verify-setup) section at the bottom.
