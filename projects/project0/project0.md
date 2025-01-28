@@ -85,7 +85,7 @@ Next, you will need to clone this repository to your local filesystem.
 **IMPORTANT INFO FOR WINDOWS USERS:** Clone ALL projects into your WSL filesystem, NOT the Windows filesystem. Your path should NOT start with `/mnt` - you can get to the WSL filesystem using `cd ~`
 
 2. Open Terminal
-3. Create a directory for your 330 projects, I recommend `mkdir ~/cmsc330spring24`
+3. Create a directory for your 330 projects, I recommend `mkdir ~/cmsc330spring25`
 4. Clone project 0 into that directory
     - Navigate to your 330 directory `cd ~/cmsc330spring25` 
     - Clone the project into your current directory `git clone git@github.com:cmsc330spring25/projectzero-YOUR_GITHUB_USERNAME` (you must edit the link with your github username)
