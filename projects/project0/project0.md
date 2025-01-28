@@ -78,7 +78,7 @@ have your GitHub account linked here, click the `Link a GitHub account` button, 
 ### Checkout on GitHub Classroom
 
 **These steps apply to every project**
-1. [Checkout the project to create your repository](https://classroom.github.com/a/ytWup6yv) - you will have to do this for every project. After you checkout the project, click the generated link displayed to bring you to the repository page.
+1. [Checkout the project to create your repository](https://classroom.github.com/a/M8cWDk6a) - you will have to do this for every project. After you checkout the project, click the generated link displayed to bring you to the repository page.
 
 Next, you will need to clone this repository to your local filesystem.
 
