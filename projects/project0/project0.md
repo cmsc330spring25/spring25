@@ -209,11 +209,11 @@ You didn't push your changes to GitHub...
       - Save and exit the file
     - Run `source ~/.profile` (or the file you just edited)
 5. Initialize OCaml
-    - We will be using OCaml version 5.3.0.  Run `ocaml -version` to check
+    - We will be using OCaml version 5.2.0.  Run `ocaml -version` to check
       which version is currently installed
-    - **If you are already on 5.3.0, you can skip to step #6**, if not, follow the instructions below
-      - If you are on another version, run `opam switch create 5.3.0` (This may take a while. Please be patient)
-      - Run `echo 'eval $(opam env --switch=5.3.0)' >> ~/.bashrc`
+    - **If you are already on 5.2.0, you can skip to step #6**, if not, follow the instructions below
+      - If you are on another version, run `opam switch create 5.2.0` (This may take a while. Please be patient)
+      - Run `echo 'eval $(opam env --switch=5.2.0)' >> ~/.bashrc`
       - **Restart** your shell
       - Ensure you are now on the correct version by running `ocaml -version`
 6. Install OCaml packages
@@ -243,13 +243,13 @@ Check the [Special macOS Instructions](#special-macos-instructions) to check if 
     - When prompted to modify `~/.zshrc` or `~/.bash_profile` (or a similar file), **do not** modify the file, type `N` or `5`
     - Run  `eval $(opam env)`
 4. Initialize OCaml
-    - We will be using OCaml version 5.3.0.  Run `ocaml -version` to check
+    - We will be using OCaml version 5.2.0.  Run `ocaml -version` to check
       which version is currently installed
-    - **If you are already on 5.3.0, you can skip to step #5**, if not, follow the instructions below
-      - If you are on another version, run `opam switch create 5.3.0` (This may take a while. Please be patient)
+    - **If you are already on 5.2.0, you can skip to step #5**, if not, follow the instructions below
+      - If you are on another version, run `opam switch create 5.2.0` (This may take a while. Please be patient)
       - Ensure that all new shells open using the correct ocaml version. First, do `echo $SHELL`.
-        - If `echo $SHELL` gives `/bin/zsh`, run `echo 'eval $(opam env --switch=5.3.0)' >> ~/.zshrc`
-        - If `echo $SHELL` gives `/bin/bash`, run `echo 'eval $(opam env --switch=5.3.0)' >> ~/.bashrc`
+        - If `echo $SHELL` gives `/bin/zsh`, run `echo 'eval $(opam env --switch=5.2.0)' >> ~/.zshrc`
+        - If `echo $SHELL` gives `/bin/bash`, run `echo 'eval $(opam env --switch=5.2.0)' >> ~/.bashrc`
       - **Restart** your shell
       - Ensure you are now on the correct version by running `ocaml -version`
 5. Install OCaml packages
@@ -294,10 +294,10 @@ These instructions assume you have a Debian-based system (e.g. Ubuntu) using the
       - When prompted to modify `~/.profile` (or another file), **do not** modify the file, type `N` or `5`
     - Run `eval $(opam env)`
 3. Initialize OCaml
-    - We will be using OCaml version 5.3.X. Run `ocaml -version` to check which version is currently installed
-    - **If you are already on version 5.3.X, you can skip to step #4**, if not, follow the instructions below
-      - If you are on another version, run `opam switch create 5.3.0` (This may take a while. Please be patient)
-      - Run `echo 'eval $(opam env --switch=5.3.0)' >> ~/.bashrc`
+    - We will be using OCaml version 5.2.X. Run `ocaml -version` to check which version is currently installed
+    - **If you are already on version 5.2.X, you can skip to step #4**, if not, follow the instructions below
+      - If you are on another version, run `opam switch create 5.2.0` (This may take a while. Please be patient)
+      - Run `echo 'eval $(opam env --switch=5.2.0)' >> ~/.bashrc`
       - **Restart** your shell
       - Ensure you are now on the correct version by running `ocaml -version`
 4. Install OCaml packages
