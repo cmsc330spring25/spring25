@@ -195,7 +195,7 @@ You didn't push your changes to GitHub...
 2. Make sure you are on WSL 2 with [this test](https://learn.microsoft.com/en-us/windows/wsl/install#check-which-version-of-wsl-you-are-running)
 3. Install the basic dependencies:
     - Run `sudo apt update && sudo apt upgrade` to update your local package listing
-    - Run `sudo apt install ocaml-native-compilers camlp4 make m4 curl libssl-dev pkg-config unzip graphviz`
+    - Run `sudo apt install ocaml-native-compilers camlp4 make m4 curl libssl-dev pkg-config unzip graphviz bubblewrap`
 4. Install and initialize the OCaml package manager
     - Run `sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)` (when prompted for the installation location, just hit enter to select the default)
         - Run `opam --version`.  You should be on version 2.2 or higher.
