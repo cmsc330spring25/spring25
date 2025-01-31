@@ -5,3 +5,4 @@
 - [Project 1](https://classroom.github.com/a/pKgvISVq) ([README](https://github.com/cmsc330spring25/spring25/blob/main/projects/project1/project1.md))
 
 ## Discussions
+- [Discussion 1](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d1_git)
