@@ -3,7 +3,8 @@
 ## Reminders
 - Discussion participation can grant you up to 1% extra credit. We will start counting participation after add/drop is over (February 14th).
   - You will need to stay after the quiz is done on quiz days in order to earn participation credit. (Quizzes occur in the first 25 minutes of discussion)
-- Project 0 released, due **Sunday, February 9th @ 11:59 PM**
+- Project 0 released, due **Monday, February 3rd @ 11:59 PM**
+- Project 1 released, due **Monday, Febuary 10th @ 11:59PM**
 - We are using [Quuly](https://officehours.cs.umd.edu) for office hours queue. The code to join is **d97a2**
   - If you do not join the queue on Quuly, you **cannot** expect a TA to know you need help.
 - [Late token policy]([#4-late-tokens](https://github.com/cmsc330spring25/spring25/blob/main/projects/project0/project0.md#windows)) 
