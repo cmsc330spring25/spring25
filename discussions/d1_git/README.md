@@ -3,7 +3,6 @@
 ## Reminders
 - Discussion participation can grant you up to 1% extra credit. We will start counting participation after add/drop is over (February 14th).
   - You will need to stay after the quiz is done on quiz days in order to earn participation credit. (Quizzes occur in the first 25 minutes of discussion)
-  - We will be dropping 2 discussions.
 - Project 0 released, due **Sunday, February 9th @ 11:59 PM**
 - We are using [Quuly](https://officehours.cs.umd.edu) for office hours queue. The code to join is **d97a2**
   - If you do not join the queue on Quuly, you **cannot** expect a TA to know you need help.
