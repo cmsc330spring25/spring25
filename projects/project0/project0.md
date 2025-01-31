@@ -234,10 +234,10 @@ Check the [Special macOS Instructions](#special-macos-instructions) to check if 
 
 0. Update your operating system (optional but recommended)
 1. Install the Homebrew package manager
-    - Run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` 
+    - Run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+    - **if you're prompted with instructions to add Homebrew to your PATH, copy and paste the three commands provided by the terminal after running the above command**
 2. Install the basic dependencies
     - Run `brew install opam openssl graphviz`
-      - if you're prompted with instructions to add Homebrew to your PATH, copy and paste the three commands provided by the terminal after running the above command
       - if you get an error on running this command then it means that brew is currently not in your PATH. To add brew to your PATH run the command `eval "$(/opt/homebrew/bin/brew shellenv)"`
 3. Initialize the OCaml package manager
     - Run `opam init`
