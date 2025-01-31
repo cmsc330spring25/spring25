@@ -288,7 +288,7 @@ Consider using functions you have written above as helpers.
   ```
 
 Here's an image that shows the jumping logic for the first example from above:
-![jumping tuples example](./imgs/jumping_tuples.png)
+![jumping tuples example](./assets/jumping_tuples.png)
 
 #### `max_func_chain init funcs`
 - **Type**: `'a -> ('a -> 'a) list -> 'a`
