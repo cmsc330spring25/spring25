@@ -238,10 +238,7 @@ Check the [Special macOS Instructions](#special-macos-instructions) to check if 
     - **if you're prompted with instructions to add Homebrew to your PATH, copy and paste the three commands provided by the terminal after running the above command**
 2. Install the basic dependencies
     - Run `brew install opam openssl graphviz`
-      - if you get an error on running this command then it means that brew is currently not in your PATH. To add brew to your PATH, read the output from `echo $SHELL`.
-        - If `echo $SHELL` gives `/bin/zsh`, run `echo 'eval "$(/opt/homebrew/bin/brew shellenv)' >> ~/.zshrc`
-        - If `echo $SHELL` gives `/bin/bash`, run `echo 'eval "$(/opt/homebrew/bin/brew shellenv)' >> ~/.bashrc`
-      - **Restart** your shell
+      - if you get an error on running this command, redo step 1, and read the terminal output this time.
 3. Initialize the OCaml package manager
     - Run `opam init`
     - When prompted to modify `~/.zshrc` or `~/.bash_profile` (or a similar file), **do not** modify the file, type `N` or `5`
