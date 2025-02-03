@@ -24,26 +24,31 @@ You may **not** use any imperative structures of OCaml such as references (`ref`
 
 The project will include the following types of tests:
 
-- Public test code is included in your project so you can see the function calls and their output.
-- Semipublic test code is hidden and the Gradescope test names will specify which functions are tested.
-- Secret test code is hidden and the names will not divulge which functions are tested. However, whether you pass will still be visible on Gradescope as soon as you submit.
+- Public: test code is included in your project so you can see the function calls and their output.
+- Semipublic: test code is hidden and the Gradescope test names will specify which functions are tested.
+- Secret: test code is hidden and the names will not divulge which functions are tested. However, whether you pass will still be visible on Gradescope as soon as you submit.
 
 You should test your project *locally* in the following ways:
 
 1. Run the public tests. These tests are the same as those on Gradescope.
 2. Write student tests in `test/student/student.ml` to best predict what you think the non-public tests are. A template for this is provided.
+3. Testing interactively with `dune utop src`
 
-Relying on Gradescope for testing is poor practice and not recommended. Additionally, staff cannot tell you what the semipublic and secret tests are.  
+Relying on uploading to Gradescope for testing is poor practice and not recommended. Additionally, staff cannot tell you what the semipublic and secret tests are.  
 
-Run all tests locally using
+**Running All Tests:**
+
+To run all tests locally, use
 
 `dune runtest -f`
 
-If you get stuck in an infinite loop, exit the tests using `Ctrl-C`. Do *not* use `Ctrl-Z`, as this will only suspend the process, not end it. 
-
 The command above will run both public and student tests. If you want to only test a using specific test file, say your student tests file, run `dune runtest -f test/student`, replacing the path if your testing files are located in a directory elsewhere. We recommend you write student tests in `test/student/student.ml`.
 
-To run a single test you need to do the following:
+If you get stuck in an infinite loop, exit the tests using `Ctrl-C`. Do *not* use `Ctrl-Z`, as this will only suspend the process, not end it. 
+
+**Running Individual Tests:**
+
+To run a *single* test you need to do the following:
 1. Build using `dune build`. This should create a `_build` folder or similar.
 2. Find where the test executable is (for example, the public test executable might have this filepath):
 
@@ -55,7 +60,11 @@ To run a single test you need to do the following:
 
    `./_build/default/test/public/public.exe -only-test public:0:abs`
 
-In addition, you can interactively test your code by running `dune utop src` (assuming you have `utop` installed properly). This allows you to use any of the functions located in the `src/` directory in this `utop` instance. All of your commands in `utop` need to end with two semicolons (i.e. `;;`), otherwise it will appear that your terminal is hanging. Exit `utop` using `Ctrl-D`, `Cmd-D`, or typing `#quit;;`.
+**Testing Interactively:**
+
+To test your code interactively, run `dune utop src` (assuming you have `utop` installed properly). This allows you to use any of the functions located in the `src/` directory in this `utop` instance. All of your commands in `utop` need to end with two semicolons (i.e. `;;`), otherwise it will appear that your terminal is hanging. Exit `utop` using `Ctrl-D`, `Cmd-D`, or typing `#quit;;`.
+
+**More Information:**
 
 More detailed information about writing/executing tests can be found [here](https://www.youtube.com/watch?v=C36JnAcClOQ). Here are the timestamps for the topics covered in the video:
 
@@ -66,6 +75,8 @@ More detailed information about writing/executing tests can be found [here](http
 - Testing inside of utop: [09:00](https://www.youtube.com/watch?v=C36JnAcClOQ&t=540s)
 - Understanding test cases: [16:00](https://www.youtube.com/watch?v=C36JnAcClOQ&t=960s)
 - Writing your own test cases: [19:20](https://www.youtube.com/watch?v=C36JnAcClOQ&t=1160s)
+
+**Submitting:**
 
 Submitting to Gradescope can be done using the exact same method used for project 0. Add your changes, commit them, push them, and then run `submit` keyword. Reminders: 1) You *must* properly push to GitHub before submitting, as Gradescope takes the files from there and not from your local files. 2) Do not manually upload files to Gradescope, only use the submit command or the GitHub upload option on Gradescope.
 
