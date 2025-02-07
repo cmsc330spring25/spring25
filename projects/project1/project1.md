@@ -1,6 +1,6 @@
 # Project 1: OCaml Warmup
 
-Due: Monday, February 10, 2025 at 11:59 PM 
+Due: ~~Monday, February 10~~ Wednesday, February 12, 2025 at 11:59 PM 
 
 Points: 35 public/55 semipublic/10 secret. See below for definitions.
 
