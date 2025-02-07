@@ -16,7 +16,7 @@
 
 ## Exercises
 
-### OCaml Lists and Patern Matching
+### OCaml Lists and Pattern Matching
 1. Write the following functions in OCaml **using recursion**:
 
    ### `remove_all lst x`
