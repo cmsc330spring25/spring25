@@ -4,7 +4,7 @@
 
 1. Quiz 1 next **Friday, February 14th**
    1. Quizzes will start **at the beginning of discussion** and you will have **25 minutes** to complete it.
-   1. Topics will be announced soon on Piazza.
+   1. Topics and logistics for the quiz are on [Piazza](https://piazza.com/class/m6687mvdhig1iw/post/262)
 3. Project 1 due **Monday, February 12th @ 11:59 PM**
 4. Quiz makeup policy: [@8](https://piazza.com/class/m6687mvdhig1iw/post/8)
    1. Quiz makeups will be at the **start of your assigned lecture time** immediately following a quiz.
