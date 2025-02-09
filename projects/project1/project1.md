@@ -62,7 +62,7 @@ To run a *single* test you need to do the following:
 
 **Test Output:**
 
-When you run OUnit tests, the results of the test suite will be the first line of output, followed by the results of each individual test run. You can read the results of the suite using the following key:
+After running OUnit tests, the results of the test suite will be the first line of output, which can be read using this key:
 <div align="center">
 
   | Output | Meaning | Description
@@ -74,7 +74,7 @@ When you run OUnit tests, the results of the test suite will be the first line o
 
 </div>
 
-For example, the test suite output: 
+For example, the test suite results: 
 
 ```
 ....F...EE...F....F.
