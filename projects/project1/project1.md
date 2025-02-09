@@ -60,6 +60,33 @@ To run a *single* test you need to do the following:
 
    `./_build/default/test/public/public.exe -only-test public:0:abs`
 
+**Test Output:**
+
+When you run OUnit tests, the results of the test suite will be the first line of output, followed by the results of each individual test run. You can read the results of the suite using the following key:
+<div align="center">
+
+  | Output | Meaning | Description
+  |:---: | :---: | ---
+  | **F** | **Failure** | The function output did not match the desired result |
+  | **E** | **Error** | Caused by an exception or `failwith` statement |
+  | **S** | **Skip** | Indicates that a test was not run (usually happens when you run one test at a time) |
+  | **.** | **Pass** | The text was executed with no issues, and the output matched the desired results 
+
+</div>
+
+For example, the test suite output: 
+
+```
+....F...EE...F....F.
+```
+
+Indicates that of 20 tests: 3 tests failed and 2 tests had errors. The output for each individual test that had either failures or errors will be shown in the terminal, immediately following the test suite line. The last line of output (after each individual test) reflects this synopsis:
+
+```
+Ran: 20 tests in: 0.00 seconds
+FAILED: Cases: 20 Tried: 20 Errors: 2 Failures: 3 Skip: 0 Todo: 0 Timeouts: 0
+```
+
 **Testing Interactively:**
 
 To test your code interactively, run `dune utop src` (assuming you have `utop` installed properly). This allows you to use any of the functions located in the `src/` directory in this `utop` instance. All of your commands in `utop` need to end with two semicolons (i.e. `;;`), otherwise it will appear that your terminal is hanging. Exit `utop` using `Ctrl-D`, `Cmd-D`, or typing `#quit;;`.
