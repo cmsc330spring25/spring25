@@ -16,7 +16,13 @@ Submit by running `submit` after pushing your code to GitHub.
 
 To test locally, run `dune runtest -f`. Besides the provided public tests, you will also find the file `student.ml` in `test/student/`, where you'll be able to add `OUnit` tests of your own. More detailed information about writing tests can be found [here](https://www.youtube.com/watch?v=C36JnAcClOQ).
 
-You can interactively test your code by running `dune utop src`, which will include your source files. (As usual, all of your commands in `utop` need to end with two semicolons (`;;`), otherwise it will appear as if your terminal is hanging)
+> [!CAUTION]
+> Tests for `insert` & `remove` **WILL FAIL** unless `query` is implemented as well
+
+You can interactively test your code by running `dune utop src`, which will include your source files. (As usual, all of your commands in `utop` need to end with two semicolons (`;;`), otherwise it will appear as if your terminal is hanging).
+
+> [!TIP]
+> If you are using `utop` to test your `db`, it might be easiest to use `query` to see the contents of your `db`
 
 ### Check Out Link:
 - Please readme in its entirety before posting on piazza.
