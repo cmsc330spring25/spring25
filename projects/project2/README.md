@@ -1,5 +1,5 @@
 # Project 2: HOFs on trees & Database design
-Due: March 24th 11:59 PM (Late: March 25th 11:59 PM)
+Due: February 24th 11:59 PM (Late: February 25th 11:59 PM)
 
 Points: 40% public, 30% semipublic, 30% secret
 
@@ -12,13 +12,16 @@ The goal of this project is to increase your familiarity with programming in OCa
 In addition to your own code, you may use library functions found in the [`Stdlib` module](https://caml.inria.fr/pub/docs/manual-ocaml/libref/Stdlib.html) and the `List` module. You **may not** (under threat of a grading penalty) use any other submodules of `Stdlib` or any imperative features of Ocaml unless otherwise stated. You **may not** make any function in part 2 recursive unless the function already has the `rec` keyword.
 
 ### Testing & Submitting
-Submit by either running `gradescope-submit` or `submit` (if you have installed the new version of gradescope submit on your computer).
-
-Instructions to use the new optional submit process can be found [here](./GRADESCOPE_SUBMIT.md)
+Submit by running `submit` after pushing your code to GitHub. 
 
 To test locally, run `dune runtest -f`. Besides the provided public tests, you will also find the file `student.ml` in `test/student/`, where you'll be able to add `OUnit` tests of your own. More detailed information about writing tests can be found [here](https://www.youtube.com/watch?v=C36JnAcClOQ).
 
 You can interactively test your code by running `dune utop src`, which will include your source files. (As usual, all of your commands in `utop` need to end with two semicolons (`;;`), otherwise it will appear as if your terminal is hanging)
+
+### Check Out Link:
+- Please readme in its entirety before posting on piazza.
+- Please read the pinned project2 FAQ post on piazza before post posting on piazza.
+- [https://classroom.github.com/a/fRfqs-D-](https://classroom.github.com/a/fRfqs-D-)
 
 ## Part 1: Database Design
 
@@ -44,8 +47,8 @@ Given a piece of data like `person`, you will implement the following operations
   - **Description**: given a person and a database, insert the person into the database and return the updated database. If the person already exists in the database, there should be duplicate entries of the person after performing the insert function.
   - **Examples**:
   ```ocaml
-  let db1 = insert {name="Alice";age=23;hobbies=["Skiing";"golfing"]} newDatabase
-  let db1 = insert {name="Alice";age=23;hobbies=["Skiing";"golfing"]} db1
+  let db1 = insert {name="Alice"; age=23; hobbies=["Skiing";"golfing"]} newDatabase
+  let db1 = insert {name="Alice"; age=23; hobbies=["Skiing";"golfing"]} db1
   (* db1 stores a database that includes Alice twice, so querying the size
       of this database should result in 2 instances of the Alice person *)
   ```
@@ -59,12 +62,12 @@ Given a piece of data like `person`, you will implement the following operations
   (* db1 no longer contains Alice, db1 is now empty *)
   ```
 #### Comparator
-A comparator is a function that tells how to compare two people. 
+A comparator is a function that tells how to compare two people. It will be used in the `sort` function.
 Its type is `person -> person -> int`. It follows the typical -1, 0, 1 convention. Below is an example comparator:
   ```ocaml
   let comparator1 p1 p2 = 
     if p1.age < p2.age then -1
-    else if p1.age == p2.age then 0
+    else if p1.age = p2.age then 0
     else 1
   ```
 
@@ -73,11 +76,11 @@ Its type is `person -> person -> int`. It follows the typical -1, 0, 1 conventio
   - **Description**: given a comparator function and a db, sort the list of people based on the comparator and return in the form of a person list. You may use anything from the `Stdlib` or the `List` modules to help you.
    - **Examples**:
   ```ocaml
-  let db1 = insert {name="Alice";age=23;hobbies=["Skiing";"golfing"]} newDatabase
+  let db1 = insert {name="Alice"; age=23; hobbies=["Skiing"; "golfing"]} newDatabase
 
-  let db2 = insert {name="Bob";age=42;hobbies=["Skiing";"Cooking"; "Legos"]} db1
+  let db2 = insert {name="Bob"; age=42; hobbies=["Skiing"; "Cooking"; "Legos"]} db1
 
-  sort comparator1 db2 = [{name="Alice";age=23;hobbies=["Skiing";"golfing"]}; {name="Bob";age=42;hobbies=["Skiing";"Cooking"; "Legos"]}]
+  sort comparator1 db2 = [{name="Alice"; age=23; hobbies=["Skiing"; "golfing"]}; {name="Bob"; age=42; hobbies=["Skiing"; "Cooking"; "Legos"]}]
   ```
 
 #### Aside
@@ -85,12 +88,9 @@ Its type is `person -> person -> int`. It follows the typical -1, 0, 1 conventio
 When we are describing something we typically link together and modify different 
 descriptors with common words like *and*, *or*, *not*. For example: "His name 
 is Cliff AND he is older than 18 AND (he likes Lego OR he likes chocolate)." 
-Here I added parenthesis to remove ambiguity. If we changed the syntax of this
-sentence we can remove some of the ambiguity: (and his name is cliff, and he is
-is older than 18, or he likes Lego, he likes chocolate). Here, while it 
-looks weird and sounds weird if you were to say it out loud, by defining words
-like *and* to link exactly 2 parts together, we can figure out exactly which 
-parts are conjoined and which are under the *or* condition. 
+The parentheses are added to remove ambiguity. By defining words
+like *and* and *or* to link exactly 2 parts, we can figure out exactly which 
+parts are under the *and* condition and which are under the *or* condition. 
 Visually this looks like:
 ```text
 and(e1,e2)
@@ -116,7 +116,6 @@ type condition =
   | Not of condition
   | If of condition * condition * condition
 ```
-
 
 Assume that conditions assigned to `True` will always evaluate to `true` and `False` will evaluate to `false`. For example, if I wanted to get a list of people who are over 30 **and** have the name "Bob", our condition would look like this:
 ```ocaml
