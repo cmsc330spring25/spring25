@@ -26,7 +26,7 @@ You can interactively test your code by running `dune utop src`, which will incl
 
 ### Check Out Link:
 - Please readme in its entirety before posting on piazza.
-- Please read the pinned project2 FAQ post on piazza before post posting on piazza.
+- Please read the pinned project2 FAQ post on piazza before posting on piazza.
 - [https://classroom.github.com/a/fRfqs-D-](https://classroom.github.com/a/fRfqs-D-)
 
 ## Part 1: Database Design
