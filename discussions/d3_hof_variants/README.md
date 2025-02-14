@@ -289,9 +289,9 @@ let rec tree_add x tree = match tree with
   <summary>Solution!</summary>
   
 ```ocaml
-let rec tree_add x tree = match tree with
-  | Leaf -> Leaf
-  | Node(l, v, r) -> Node(tree_add x l, v + x, tree_add x r)
+let rec tree_preorder tree = match tree with
+  | Leaf -> ""
+  | Node(l, v, r) -> v ^ (tree_preorder l) ^ (tree_preorder r);;
 ```
 </details>
 
