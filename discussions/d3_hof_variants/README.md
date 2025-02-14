@@ -222,13 +222,13 @@ average_temperature ex3 = 32.5
   <summary>Solution!</summary>
   
 ```ocaml
-let average_temperature reports =
-  if reports.num_of_days = 0.0 
+let average_temperature report =
+  if report.num_of_days = 0.0 
     then 0.0
   else
     let total_temp =
-      List.fold_left (fun sum day -> sum +. day.temperature) 0.0 reports.days
-    in total_temp /. reports.num_of_days;;
+      fold (fun sum day -> sum +. day.temperature) 0.0 report.days
+    in total_temp /. report.num_of_days;;
 ```
 </details>
 
