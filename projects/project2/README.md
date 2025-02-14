@@ -18,6 +18,7 @@ To test locally, run `dune runtest -f`. Besides the provided public tests, you w
 
 > [!CAUTION]
 > Tests for `insert` & `remove` **WILL FAIL** unless `query` is implemented as well.
+> In addition, tests **will not run** unless you have defined `db`, `newDatabase`, and `insert`.
 
 You can interactively test your code by running `dune utop src`, which will include your source files. (As usual, all of your commands in `utop` need to end with two semicolons (`;;`), otherwise it will appear as if your terminal is hanging).
 
