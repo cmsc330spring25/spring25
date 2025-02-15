@@ -152,7 +152,8 @@ Other examples of valid `condition`s are:
   let db2 = insert {name="Bob"; age=42; hobbies=["Skiing"; "Cooking"; "Legos"]} db1
 
   query condition1 db2 = [{name="Bob";age=42;hobbies=["Skiing";"Cooking"; "Legos"]}]
-  query True db2 = db2
+  query True db2 = [{name="Bob";age=42;hobbies=["Skiing";"Cooking";"Legos"]}; {name="Alice";age=23;hobbies=["Skiing";"golfing"]}]
+(* querying with condition True returns a person list that contains all people in the db *)
   query False db2 = []
   ```
    
