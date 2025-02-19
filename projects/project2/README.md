@@ -179,7 +179,8 @@ Other examples of valid `condition`s are:
   ```ocaml
   let change1 = fun person -> { name = person.name; age = person.age; hobbies = "Pickleball"::person.hobbies}
 
-  update condition1 db2 change1
+  let updated = update condition1 db2 change1
+  query True updated = [{name="Bob";age=42;hobbies=["Pickleball";"Skiing";"Cooking"; "Legos"]}; {name="Alice";age=23;hobbies=["Skiing";"golfing"]}]
   (* Bob's hobbies are now updated to include pickleball *)
   ```
 
