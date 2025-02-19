@@ -23,7 +23,7 @@ To test locally, run `dune runtest -f`. Besides the provided public tests, you w
 You can interactively test your code by running `dune utop src`, which will include your source files. (As usual, all of your commands in `utop` need to end with two semicolons (`;;`), otherwise it will appear as if your terminal is hanging).
 
 > [!TIP]
-> If you are using `utop` to test your `db`, it might be easiest to use `query` to see the contents of your `db`.
+> If you are using `utop` to test your `db`, and you've already defined your `db` type in your `.ml` file, you can update the contents of the `.mli` file to include your type definition so that it doesn't show up as `<abstr>` when `utop` shows the value of a `db`.
 
 ### Check Out Link:
 - Please readme in its entirety before posting on piazza.
