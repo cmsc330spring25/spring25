@@ -3,7 +3,8 @@
 ## Reminders
 
 1. Quiz 2 next **Friday, February 28th**!
-2. Project 2 released, due **Monday, February 24 @ 11:59 PM**
+   - [Quiz 2 Logistics](https://piazza.com/class/m6687mvdhig1iw/post/561)
+3. Project 2 released, due **Monday, February 24 @ 11:59 PM**
 
 ## Topic List
 
