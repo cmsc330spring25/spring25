@@ -397,4 +397,4 @@ The following functions are useful for writing tests, and can be found in `regex
 [pervasives doc]: https://v2.ocaml.org/api/Stdlib.html
 [lecture notes]: https://bakalian.cs.umd.edu/330/schedule
 [fsm notes]: https://bakalian.cs.umd.edu/assets/notes/fa.pdf
-[utils]: ./SETS.md
+[utils]: ./UTILS.md
