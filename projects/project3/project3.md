@@ -17,9 +17,9 @@ In class, we implemented a Regular Expression Interpreter through a series of re
 Here's how the parts can be assembled into an Interpreter. In Part I, you'll simulate an NFA. You can do that directly, or you can use Part II to convert to a DFA and then assume you have a DFA to simulate. In Part II, you'll implement an NFA to DFA converter. In Part III, you'll convert a RegExp to an NFA. You can put these parts together to create an Interpreter: Input a RegExp to Part III to create an NFA, and then input that NFA and a string to Part I to simulate the resulting NFA. Or, input that NFA to Part II to get a DFA, then since the class of DFAs is a subset of NFAs, input that DFA to Part I to simulate it. You aren't required to create these workflows, as we'll test each part independently, but you can experiment with them. (Note that the same Ocaml type, `nfa_t`, is used for both NFAs and DFAs in this project, so the function to convert an NFA to a DFA takes and returns `nfa_t`.)
 
 ### Ground Rules
-This is NOT a pair project. You must work on this project alone as with most other CS projects. See the [Academic Integrity](#academic-integrity) section for more information. In your code, you **may** use any non-imperative standard library functions (with the exception of printing, see below), but the ones that will be useful to you will be found in the [`Stdlib`][pervasives doc] and [`List`][list doc]. The **only imperative feature you may use is the provided `fresh` function** in [`utils.ml`](utils). **You will receive a 0 for any functions using restricted features - we will be checking your code! This includes for loops, while loops, and references.**
+This is NOT a pair project. You must work on this project alone as with most other CS projects. See the [Academic Integrity](#academic-integrity) section for more information. In your code, you **may** use any non-imperative standard library functions (with the exception of printing, see below), but the ones that will be useful to you will be found in the [`Stdlib`][pervasives doc] and [`List`][list doc]. The **only imperative feature you may use is the provided `fresh` function** in [`utils.ml`](./UTILS.md). **You will receive a 0 for any functions using restricted features - we will be checking your code! This includes for loops, while loops, and references.**
 
-Additionally, we have provided a `Utils` module that correctly implements common set operations, as well as other functions you might find useful. **Note:** the set functions in the `Utils` module assume that the inputs are valid sets (i.e., they do not contain duplicates).  They will have undefined behavior if you try to give them inputs that do not meet this requirement (such as `[1; 2; 2; 3]`). You can convert an arbitrary list to a valid set with `List.sort_uniq Stdlib.compare your_list`. You can find the documentation for said module [here](utils).
+Additionally, we have provided a `Utils` module that correctly implements common set operations, as well as other functions you might find useful. **Note:** the set functions in the `Utils` module assume that the inputs are valid sets (i.e., they do not contain duplicates).  They will have undefined behavior if you try to give them inputs that do not meet this requirement (such as `[1; 2; 2; 3]`). You can convert an arbitrary list to a valid set with `List.sort_uniq Stdlib.compare your_list`. You can find the documentation for said module [here](./UTILS.md).
 
 ### Testing
 
@@ -233,7 +233,7 @@ Here are the functions you must implement:
   4. accept on `dfa_ex` with the string "abac" returns `true` because from 0 to 1 there is an 'a' transition but then to use the 'b' we go back from 1 to 0 and then we take an 'a' transition to go to state 1 again and then finally from 1 to 2 we exhaust our last character 'c' to make it to our final state. Since we are in a final state, the nfa accepts "abac".
 
 >[!TIP]
-> When implementing this function, you might find the `explode` function from `utils.ml` useful! Documentation can be found [here](utils)
+> When implementing this function, you might find the `explode` function from `utils.ml` useful! Documentation can be found [here](./UTILS.md)
 
 ## Part 2: DFAs
 
@@ -397,4 +397,3 @@ The following functions are useful for writing tests, and can be found in `regex
 [pervasives doc]: https://v2.ocaml.org/api/Stdlib.html
 [lecture notes]: https://bakalian.cs.umd.edu/330/schedule
 [fsm notes]: https://bakalian.cs.umd.edu/assets/notes/fa.pdf
-[utils]: ./UTILS.md
