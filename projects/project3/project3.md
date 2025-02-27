@@ -385,10 +385,10 @@ The following functions are useful for writing tests, and can be found in `regex
   
   Precedence | Operator | Description
   ---------- | -------- | -----------
-  1 | `()` | parentheses
-  2 | `*` | closure
-  3 |  | concatenation
-  4 | `|` | union
+  1 | `()`   | parentheses
+  2 | `*`    | closure
+  3 |        | concatenation
+  4 | `\|`   | union
   
   Also, note that all the binary operators are **right associative**.
 
