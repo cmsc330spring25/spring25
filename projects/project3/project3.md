@@ -1,6 +1,6 @@
 # Project 3: Regular Expression Engine
 
-Due: Monday, March 10th 11:59 PM (Late: Tuesday, March 11th 11:59 PM)
+Due: ~~Monday, March 10th~~ Friday, March 14th 11:59 PM (Late: Saturday, March 15th 11:59 PM)
 
 Points: 35 public, 35 semipublic, 30 secret
 
