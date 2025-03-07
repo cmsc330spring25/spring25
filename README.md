@@ -12,6 +12,7 @@
 - [Discussion 3](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d3_hof_variants)
 - [Discussion 4](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d4_pbt_regex)
 - [Discussion 5](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d5_nfa_dfa)
+- [Discussion 6](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d6_fsm_review)
 
 ## Review
 - [Exam 1](https://github.com/cmsc330spring25/spring25/tree/main/course-files/review/Exam1-Review)
