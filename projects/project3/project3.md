@@ -311,10 +311,11 @@ To write `nfa_to_dfa`, we will  write some helpers. These helpers follow the NFA
 
 - **Type**: `('q, 's) nfa_t -> ('q list, 's) nfa_t`
 - **Description**: This function takes as input an NFA and converts it to an equivalent DFA. The language recognized by an NFA is invariant under `nfa_to_dfa`. In other words, for all NFAs `nfa` and for all strings `s`, `accept nfa s = accept (nfa_to_dfa nfa) s`.
+- We don't care what you do with the garbage state (as long as your accept accounts for it), but you're encouraged to remove it.
 
 > [!NOTE]
 > The `nfa_to_dfa` algorithm is pretty substantial. While you are free to design it in whatever manner you like (referring to the [lecture slides](https://bakalian.cs.umd.edu/330/slides) for assistance), we suggest you consider writing a helper function `nfa_to_dfa_step`. If your code times out, 9/10 times its due to an infinite loop, but in rare cases effiency can matter, so try to minimize calls to the Set module.
-
+ 
 #### `nfa_to_dfa_step nfa dfa wrk`
 
 - **Optional, Ungraded**: Skip implementing the `nfa_to_dfa_step` function if you feel you have a better approach.
@@ -395,5 +396,5 @@ The following functions are useful for writing tests, and can be found in `regex
 
 [list doc]: https://v2.ocaml.org/api/List.html
 [pervasives doc]: https://v2.ocaml.org/api/Stdlib.html
-[lecture notes]: https://bakalian.cs.umd.edu/330/schedule
+[lecture notes]: https://bakalian.cs.umd.edu/330/slides
 [fsm notes]: https://bakalian.cs.umd.edu/assets/notes/fa.pdf
