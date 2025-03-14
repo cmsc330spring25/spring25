@@ -3,7 +3,7 @@
 ## Reminders
 
 1. Project 3 due **TODAY @ 11:59pm**
-2. Project 4 released, tentatively due **Thursday, April 2nd @ 11:59pm**
+2. Project 4 will be released soon, tentatively due **Thursday, April 2nd @ 11:59pm**
     - We have given ample time to do this project after break, as there is no expectation to work on this project during break.
 3. Quiz 3 is **Next Discussion, Friday the 28th**. See Piazza logistics post.
 
