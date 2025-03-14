@@ -1,5 +1,5 @@
 # Project 4: SmallC Lexer, Parser, and Evaluator
-Due: Sunday, March 30th, 11:59 PM EST (Late: Monday, March 31st 11:59 PM EST)
+Due: Thursday, April 3rd, 11:59 PM EST (Late: Friday, April 4th 11:59 PM EST)
 
 Points: 48 public, 52 semipublic
 
