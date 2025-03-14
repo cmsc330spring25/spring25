@@ -1,0 +1,344 @@
+\documentclass[10pt]{article}
+
+\usepackage{semantic}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+% \title{Project 3}
+% \subtitle{SmallC Formal Operational Semantics}
+
+
+\begin{document}
+\title{%
+  SmallC Formal Operational Semantics}
+
+\maketitle
+
+\newcommand{\config}[2][A]{{#1};{#2}}
+\titleformat{\subsection}[runin]{\bfseries \itshape}{\thesubsection.}{3pt}{\space}[.]
+\titlespacing*{\subsection}{\parindent}{1ex}{1em}
+
+\section{Introduction}
+
+This document presents the formal semantics of Small C. It has two main
+parts. The first part is the \emph{expression semantics}. It
+corresponds to the implementation of your \texttt{eval\_expr}
+function. The second part is the \emph{statement semantics}. It
+corresponds to the implementation of your \texttt{eval\_stmt}
+function.
+
+\section{Preliminaries}
+
+\subsection{Environments}
+
+Both parts define judgments that make use of environments $A$. The
+rules show two operations on environments:
+\begin{itemize}
+\item $A(x)$ means to look up the value of $x$ maps to in the
+  environment $A$. This operation is undefined if there is no mapping
+  for $x$ in $A$.  We write $\cdot$ for the empty environment. Lookup
+  on this environment is always undefined; i.e., $\cdot(x)$ is
+  undefined for all $x$.
+\item The second operation is written $A[ x \mapsto v ]$. It defines a
+  new environment that is the same as $A$ but maps $x$ to $v$. It thus
+  overrides any prior mapping for $x$ in $A$. This is similar to the
+  ``concatenation'' of environments shown in the \href{https://bakalian.cs.umd.edu/330/slides}{lecture notes}. 
+  So, $\cdot[ x \mapsto 1 ]$ is an environment that maps $x$
+  to $1$ but is undefined for all other variables. The environment
+  $\cdot[ x \mapsto 1][y \mapsto 2]$ is an environment that maps $x$
+  to $1$ and $y$ to 2. As such, if
+  $A = \cdot[ x \mapsto 1][y \mapsto 2]$ then $A(x) = 1$. That is,
+  looking up $x$ in the second example environment produces its
+  mapped-to value, 1.
+\end{itemize}
+
+\subsection{Syntax}
+
+In this document, we have simplified the presentation of the syntax,
+so it may not correspond exactly to the files that your interpreter
+will read in. For example, we write $\mathtt{while}\;e\,s$ to
+represent the syntax of a while-loop, where $e$ is the guard and $s$
+is the body. This corresponds to \texttt{While of expr * stmt} in the
+\texttt{types.ml} file. Hopefully the connection between what we show
+here at that file is clear enough from context.
+
+\subsection{Error conditions}
+
+The semantics here defines only \emph{correct} evaluations. It says
+nothing about what happens when, say, you have a type error. For
+example, for the rules below there is no value $v$ for which you can
+prove the judgment $\config[\cdot]{1+\mathbf{true}} --> v$. In your actual
+implementation, erroneous programs will cause an exception to be
+raised, as indicated in the project README.
+
+\section{Expression Semantics}
+
+This part of the formal semantics corresponds to the implementation of
+your \texttt{eval\_expr} function. That function has type
+\texttt{environment -> expr -> value}. In the semantics, we write the
+judgment $\config{e} --> v$, where $A$ represents the environment, $e$
+represents the expression, and $v$ represents the final value. This
+follows the same format as the \href{https://bakalian.cs.umd.edu/330/slides}{lecture notes}.
+
+\subsection{Abstract syntax grammar}
+
+Expressions and values are defined by the following grammar:
+\[
+\begin{array}{lrcl}
+\mathrm{Integers} & n & \mathit{is} & \mathrm{any\ integer}\\
+\mathrm{Booleans} & b & \mathtt{::=} & \mathbf{true} \mid \mathbf{false} \\
+\mathrm{Values} & v & \mathtt{::=} & n \mid b \\
+\mathrm{Expressions} & e & \mathtt{::=} & v \mid\ !e \mid e \oplus e \mid e \odot e \mid e == e \mid
+                   e\ != e \\
+\end{array}
+\]
+Here, we write $\oplus$ to represent any operator involving a pair of
+integers. This could be addition ($+$), comparison ($\leq$),
+multiplication ($\times$), etc. We write $\odot$ to represent any
+operator involving a pair of booleans. This could be boolean-and
+($\&\&$), boolean-or ($||$), etc. We do not go into specifics here
+about what these actually do; they should match your
+intuition.
+
+\subsection{Rules}
+
+%\newcommand\BrText[2]{%
+%  \par\smallskip
+%   \noindent\makebox[\textwidth][r]{$\text{#1}\left\{
+%    \begin{minipage}{\textwidth}
+%    #2
+%    \end{minipage}
+%  \right.\nulldelimiterspace=0pt$}\par\smallskip
+%}
+
+Here are the axioms.
+
+$$
+\begin{array}{c}
+
+\inference[Id]
+{A(x) = v}
+{\config{x} --> v}
+\qquad
+
+\inference[Int]
+{}
+{\config{n} --> n}
+\\ \\
+
+\inference[Bool-True]
+{}
+{\config{\mathbf{true}} --> \mathbf{true}}
+
+\qquad
+
+\inference[Bool-False]
+{}
+{\config{\mathbf{false}} --> \mathbf{false}}
+\\ \\ \\
+
+\end{array}
+$$
+
+Here are the rest of the rules for expressions.
+
+$$
+\begin{array}{c}
+
+\inference[Eq-True]
+{\config{e_1} --> v \\
+\config{e_2} --> v}
+{\config{e_1 == e_2} --> \mathbf{true}}
+
+\qquad
+
+\inference[Eq-False]
+{\config{e_1} --> v_1 \\
+\config{e_2} --> v_2 \\
+v_1 \mathrm{~is~different\ than~} v_2}
+{\config{e_1 == e_2} --> \mathbf{false}}
+
+\\ \\
+
+\inference[NotEq-True]
+{\config{e_1} --> v_1 \\
+\config{e_2} --> v_2 \\
+v_1 \mathrm{~is~different\ than~} v_2}
+{\config{e_1\ != e_2} --> \mathbf{true}}
+
+\qquad
+
+\inference[NotEq-False]
+{\config{e_1} --> v \\
+\config{e_2} --> v}
+{\config{e_1\ != e_2} --> \mathbf{false}}
+
+\\ \\
+
+\inference[BinOp-Int]
+{\config{e_1} --> n_1 \\
+\config{e_2} --> n_2 \\
+v \mathrm{~is~} n_1 \oplus n_2}
+{\config{e_1 \oplus e_2} --> v}
+
+\qquad
+
+\inference[BinOp-Bool]
+{\config{e_1} --> b_1 \\
+\config{e_2} --> b_2 \\
+b_3 \mathrm{~is~} b_1 \odot  b_2}
+{\config{e_1 \odot e_2} --> b_3}
+
+\\ \\ \\
+
+\inference[Unary-Not]
+{\config{e_1} --> b_1 \\
+b_2 \mathrm{~is~} \neg b_1}
+{\config{! e_1} --> b_2}
+
+\\ \\ \\
+
+\end{array}
+$$
+
+\section{Statement Semantics}
+
+This part of the formal semantics corresponds to the implementation of
+your \texttt{eval\_stmt} function. That function has type
+\texttt{environment -> stmt -> environment}. In the semantics, we write the
+judgment $\config{s} --> A'$, where $A$ represents the input environment, $s$
+represents the statement to execute, and $A'$ represents the final output
+environment. Statements are different from expressions in that they do
+not ``return'' anything themselves; instead, their impact occurs by
+modifying the environment (by assigning to variables).
+
+\subsection{Abstract syntax grammar}
+
+Statements are defined by the following grammar:
+\[
+\begin{array}{lrcl}
+\mathrm{Statements} & s & \mathtt{::=} & \mathtt{skip} \mid  s
+                                         \mathtt{;} s \mid
+                                         \mathtt{if}\;e\,s\,s \mid
+                                         \mathtt{while}\;e\,s \mid
+                                         \mathtt{for}\;x\,e\,e\,s \mid
+                                         \mathtt{int}\;x \mid
+                                         \mathtt{bool}\;x \mid
+                                         x = e \\
+\end{array}
+\]
+
+In the project itself there is also a statement form for printing; we
+leave that out of the formal semantics.
+
+\subsection{Rules}
+
+\subsection*{Variables}
+
+In Small C, you have to declare a variable, with its type, before you
+use it. When declared, it will be initialized to a default value. You
+cannot declare the same variable twice.
+
+$$
+\begin{array}{c}
+
+\inference[Declare-Int]
+{A(x) \mathrm{~is~not~defined}}
+{\config{\mathtt{int}\;x} --> A[ x \mapsto 0 ]}
+
+\qquad
+
+\inference[Declare-Bool]
+{A(x) \mathrm{~is~not~defined}}
+{\config{\mathtt{bool}\;x} --> A[ x \mapsto \mathbf{false} ]} \\ \\
+\end{array}
+$$
+
+Assigning to variables must respect their declared type. In
+particular, you cannot assign to a variable you have not declared, and
+you cannot write a boolean to a variable declared as an int, or vice versa.
+
+$$
+\begin{array}{c}
+
+\inference[Assign-Int]
+{A(x) = n\;\mathrm{(for~some~}n)\\
+\config{e} --> n_1}
+{\config{x=e} --> A[ x \mapsto n_1 ]}
+\qquad
+
+\inference[Assign-Bool]
+{A(x) = b\;\mathrm{(for~some~}b)\\
+\config{e} --> b_1}
+{\config{x=e} --> A[ x \mapsto b_1 ]} \\ \\
+
+\end{array}
+$$
+
+\subsection*{Control Flow} Here are the rules for the different
+control flow constructs.
+
+$$
+\begin{array}{c}
+\inference[Nop]
+{}
+{\config{\mathtt{skip}} --> A}
+\qquad
+
+\inference[Sequence]
+{\config{s_1} --> A_1 \\
+\config[A_1]{s_2} --> A_2}
+{\config{s_1; s_2} --> A_2}
+\\ \\
+
+\inference[If-True]
+{\config{e} --> \mathbf{true}\\
+\config{s_1} --> A_1}
+{\config{\mathtt{if}\; e\, s_1\, s_2} --> A_1}
+
+\qquad
+
+\inference[If-False]
+{\config{e} --> \mathbf{false}\\
+\config{s_2} --> A_2}
+{\config{\mathtt{if}\; e\, s_1\, s_2} --> A_2}
+
+\\ \\ \\
+
+\inference[While-True]
+{\config{e} --> \mathbf{true}\\
+\config{s} --> A_1\\
+\config [A_1]{\mathtt{while}\;e\, s} --> A_2}
+{\config{\mathtt{while}\; e\, s} --> A_2}
+
+\qquad
+
+\inference[While-False]
+{\config{e} --> \mathbf{false}}
+{\config{\mathtt{while}\; e\, s} --> A}
+
+\\ \\ \\
+
+\inference[For-Go]
+{\config{e_1} --> n_1\\
+ \config{e_2} --> n_2\\
+ \config[A \lbrack x \mapsto n_1 \rbrack] {s} --> A_1 \\
+ \config [A_1] {x = x + 1} --> A_2 \\
+ \config [A_2]{\mathtt{for}\; x\,x\,n_2\,s} --> A' \\
+ n_1 \leq n_2}
+{\config {\mathtt{for}\; x\,e_1\,e_2\,s} --> A'}
+
+\qquad
+
+\inference[For-Stop]
+{\config{e_1} --> n_1\\
+ \config{e_2} --> n_2\\
+ n_1 > n_2}
+{\config {\mathtt{for}\; x\,e_1\,e_2\,s} --> A \lbrack x \mapsto n_1 \rbrack}
+
+\\ \\ \\
+
+\end{array}
+$$
+
+\end{document}
