@@ -232,7 +232,8 @@ N ⇒ 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | true | false | null
   <summary>Solution</summary>
 
 - C: Division by zero is a runtime error
-- E: Type error: and requires both operands to be boolean, but 5 is a number
+- D: Type error: "+" requires both operands to be a number
+- E: Type error: "and" requires both operands to be boolean, but 5 is a number
 
 </details>
 
