@@ -223,7 +223,7 @@ N ⇒ 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | true | false | null
     Which would fail the evaluation stage for the language provided above? If it fails the lexing or parsing stage, then do not choose it.
     - A. `+ 3 * 4 5`
     - B. `if > 5 4 true false`
-    - C. `4 / 0`
+    - C. `/ 4 0`
     - D. `+ null 3`
     - E. `and 5 true`
 
