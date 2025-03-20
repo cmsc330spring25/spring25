@@ -366,7 +366,11 @@ The heart of SmallC is your evaluator. We have already implemented `Lexer` and `
 
 You are responsible for implementing two functions, `eval_expr` and `eval_stmt` in that order. Each of these takes as an argument an `environment` (given in `smallCTypes.ml`) that is an association list. An association list is a list of pairs (2-tuples) where the key is the first element of the pair and the value is the second element. Elements earlier in the list override elements later in the list. In our case, the association list is of type `(string * value) list` where the string is the id name and the value is the current value of that id. **The List module has many useful functions for working with association lists**. Statements may change the values of variables, so `eval_stmt` returns a possibly updated environment.
 
-A formal operational semantics of SmallC can be found in [`semantics.pdf`][semantics document]. We highly recommend you read this document as you work to clear up any possible ambiguity introduced by the English explanations below. The formal semantics do not, however, define error cases such as addition between a boolean and an integer and therefore represent a stuck reduction. The expected behavior for these irreducible error cases are defined only in this document and can be boiled down to the following rules:
+> [!IMPORTANT]
+> A formal operational semantics of SmallC can be found in [`semantics.pdf`][semantics document]. We highly recommend you read this document as you work to clear up any possible ambiguity introduced by the English explanations below.
+> The formal semantics do not, however, define error cases such as addition between a boolean and an integer and therefore represent a stuck reduction.
+
+The expected behavior for these irreducible error cases are defined only in this document and can be boiled down to the following rules:
 
 - Any expression containing division by zero should raise a `DivByZero` error when evaluated.
 - Any expression or statement that is applied to the wrong types should raise a `TypeError` exception when evaluated, for example, the expression `1 + true` would result in `TypeError`.
