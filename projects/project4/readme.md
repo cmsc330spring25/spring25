@@ -234,7 +234,7 @@ As an example, see how the parser will break down an input mixing a few differen
 
 **Output (after lexing and parsing):**
 ```ocaml
-Add(
+Sub(
   Div(
     Int(4),
     Pow(
