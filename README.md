@@ -17,6 +17,7 @@
 - [Discussion 6](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d6_fsm_review)
 - [Discussion 7](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d7_cfg_interps)
 - [Discussion 8](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d8_opsem)
+- [Discussion 9](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d9_typechecking)
 
 ## Review
 - [Exam 1](https://github.com/cmsc330spring25/spring25/tree/main/course-files/review/Exam1-Review)
