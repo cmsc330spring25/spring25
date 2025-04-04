@@ -100,7 +100,7 @@ Updated `stmt` CFG:
 
 ## Part (A): AST optimization
 
-#### `optimize : stmt -> bool`
+#### `optimize : stmt -> stmt`
 
 * **Description:** Takes in an `stmt` AST and returns a optimized `stmt` AST. See below for what this means.
 * **Exception:** Throws a `DivByZeroError` if division by zero occurs.
