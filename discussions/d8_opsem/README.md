@@ -1,4 +1,4 @@
-# Discussion 8 - Friday, March 28rd
+# Discussion 8 - Friday, March 23rd
 
 ## Reminders
 
@@ -48,10 +48,14 @@ $\Huge \frac{}{A;\ n \implies n} \quad \frac{A(x)\ =\ v}{A;\ x \implies v} \quad
     
 ![image](https://hackmd.io/_uploads/HJx-JLE61x.png)
 
-
 4.
     
 ![image](https://hackmd.io/_uploads/BJYl1UVake.png)
 
-
 </details>
+
+## Additional Readings & Resources
+
+- [Professor Mamat's Operational Semantics Slides](https://bakalian.cs.umd.edu/assets/slides/17-semantics.pdf)
+- [Fall 2022 - Discussion 10 (Operational Semantics)](https://github.com/umd-cmsc330/fall2022/tree/main/discussions/discussion10#operational-semantics)
+- [OpSem Problem Generator](https://bakalian.cs.umd.edu/330/practice/opsem)
