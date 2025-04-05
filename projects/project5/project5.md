@@ -147,7 +147,7 @@ Optimized result: `Print( Binop( Add, Int 5, Value ) )`
 > Yippee now we have more efficient AST's that require less computation every time we run them!
 
 
-In the first part of this project, you will implement a function `optimize : expr environment -> expr -> expr`,  which can partially evaluate and simplify the AST, using the following optimizations:
+In the first part of this project, you will implement a function `optimize : stmt -> stmt`,  which can partially evaluate and simplify the AST, using the following optimizations:
 
 ### Constant folding
 
