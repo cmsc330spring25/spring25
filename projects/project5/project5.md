@@ -165,7 +165,7 @@ Constant folding can make use of arithmetic and boolean identities. For example:
 * If `x` is a boolean, then the value of `x && true` is `x`
 * If `x` is a boolean, then the value of `x || true` is `true`
 
-There are others you should consider. If you need a refresher, refer to our CMSC250 class. ([JWG](https://math.umd.edu/~immortal) (and Cliff's) [notes](https://www.math.umd.edu/~immortal/CMSC250/) and Cliff's [slides](https://bakalian.cs.umd.edu/fall22/250/)).
+There are others you should consider. If you need a refresher on rules of inference and laws of equivalence, refer to our CMSC250 class. ([JWG](https://math.umd.edu/~immortal) (and Cliff's) [notes](https://www.math.umd.edu/~immortal/CMSC250/) and Cliff's [slides](https://bakalian.cs.umd.edu/fall22/250/)).
 
 > [!Important]
 > Testing optimization of AST is hard. Our test will look for all `Value` types pushed to the end of the expression, and then be right associative. 
