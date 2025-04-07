@@ -8,6 +8,7 @@
 > We have moved towards a new testing framework. You can test it out by running the following. This is required to run public tests.
 > 
 > ```sh
+> opam update
 > opam install alcotest 
 > ```
 
