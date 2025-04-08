@@ -92,21 +92,21 @@ When doing this on paper, you can consider keeping track of all this info throug
 <img width="290" alt="Screenshot 2025-04-07 at 6 53 28 PM" src="./imgs/nfadfa1.png" />
 <details>
   <summary>Solution!</summary>
-  <img width="1273" alt="Screenshot 2025-04-08 at 9 53 35 AM" src="https://github.com/user-attachments/assets/47e8c4d4-0dc4-495f-b399-77e8c6aceb1a" />
+  <img width="1273" alt="Screenshot 2025-04-08 at 9 53 35 AM" src="./imgs/nfadfa1sol.png" />
 </details>
 
 2) (From Fall2023 Exam 1) 
 <img width="265" alt="Screenshot 2025-04-07 at 6 53 48 PM" src="./imgs/nfadfa2.png" />
 <details>
   <summary>Solution!</summary>
-  <img width="1045" alt="Screenshot 2025-04-08 at 9 51 12 AM" src="https://github.com/user-attachments/assets/6feac63a-d02e-4870-9344-e61623f059e2" />
+  <img width="1045" alt="Screenshot 2025-04-08 at 9 51 12 AM" src="./imgs/nfadfa2sol.png" />
 </details>
 
 3) (From Spring2019 Exam 2) 
 <img width="655" alt="image" src="./imgs/nfadfa3.png" />
 <details>
   <summary>Solution!</summary>
-<img width="745" alt="Screenshot 2025-04-08 at 4 58 18 PM" src="https://github.com/user-attachments/assets/a97f73f9-fef9-403d-9697-cf8c54caf4fa" />
+<img width="745" alt="Screenshot 2025-04-08 at 4 58 18 PM" src="./imgs/nfadfa3sol.png" />
 </details>
 
 ## Operational Semantics
@@ -139,19 +139,19 @@ When doing this on paper, you can consider keeping track of all this info throug
 
 ### Examples!
 - Example from Fall24Q3:
-  <img width="917" alt="image" src="https://github.com/user-attachments/assets/cc9c8377-35cb-4eeb-8993-377a06a52649" />
+  <img width="917" alt="image" src="./imgs/op1.png" />
   <details>
     <summary>Solution!</summary> 
     6 4 op4 3 op3
   </details>
 - Example from Spring24E2:
-  <img width="1247" alt="image" src="https://github.com/user-attachments/assets/7fd14472-8b35-4df3-a0a0-1559b9874d64" />
+  <img width="1247" alt="image" src="./imgs/op2.png" />
   <details>
     <summary>Solution!</summary> 
     (fun x -> op2 x false) false
   </details>
 - Example from Spring2022Q4:
-  <img width="917" alt="image" src="https://github.com/umd-cmsc330/review/blob/main/Exam2-Review/imgs/opsemex1.png?raw=true" />
+  <img width="917" alt="image" src="./imgs/op3.png" />
   <details>
     <summary>Solution!</summary> 
     
@@ -168,11 +168,11 @@ When doing this on paper, you can consider keeping track of all this info throug
     Blank #6: **“cmsc330” is “cmsc” ^ “330”**
   </details>
 - Example from Fall2023E2:
-  <img width="930" alt="image" src="https://github.com/umd-cmsc330/review/blob/main/Exam2-Review/imgs/opsemex2.png?raw=true" />
+  <img width="930" alt="image" src="./imgs/op4.png" />
   <details>
     <summary>Solution!</summary> 
     
-    <img width="917" alt="image" src="https://github.com/umd-cmsc330/review/blob/main/Exam2-Review/imgs/opsemex2_soln.png?raw=true" />
+    <img width="917" alt="image" src="./imgs/op4sol.png" />
   </details>
 
 ## Type Checking
