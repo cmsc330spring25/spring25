@@ -89,7 +89,7 @@ When doing this on paper, you can consider keeping track of all this info throug
 ### NFA to DFA Conversion
 
 1) (From Spring2024 Exam 1) 
-<img width="290" alt="Screenshot 2025-04-07 at 6 53 28 PM" src="./imgs/nfadfa1.pngc" />
+<img width="290" alt="Screenshot 2025-04-07 at 6 53 28 PM" src="./imgs/nfadfa1.png" />
 <details>
   <summary>Solution!</summary>
   <img width="1273" alt="Screenshot 2025-04-08 at 9 53 35 AM" src="https://github.com/user-attachments/assets/47e8c4d4-0dc4-495f-b399-77e8c6aceb1a" />
