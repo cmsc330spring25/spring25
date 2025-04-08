@@ -1,0 +1,245 @@
+What happens in each phase?
+Lex - Literal list of tokens - nothing but converting string to list or failing on unknown stuff
+Parse - Grammar check!
+Evaluate - Given a gramatically correct structrue, what is its meaning?
+
+ASTs and Parse Trees:
+
+Parse Tree:
+
+You know how you would parse something like this:
+
+4 + true and false
+S -> M + S -> N + S -> 4 + S -> 4 + M -> 4 + N and M -> 4 + true and M -> 4 + true and N -> 4 + true and false
+
+Parse trees are just another represenatation of this same process. Let's build one:
+
+S: just S
+
+        S
+
+S -> M + S: S split into M, +, S
+
+           S
+      /    |    \
+    M      +     S
+
+S -> M + S -> N + S: M turned into N
+
+           S
+      /    |    \
+    M      +     S
+  /
+N
+
+S -> M + S -> N + S -> 4 + S: N turned into 4
+
+           S
+      /    |    \
+    M      +     S
+  /
+N
+|
+4
+
+S -> M + S -> N + S -> 4 + S -> 4 + M: S turned into M
+
+           S
+      /    |    \
+    M      +     S
+  /              |
+N                M
+|
+4
+
+S -> M + S -> N + S -> 4 + S -> 4 + M -> 4 + N and M: M turned into N and M
+
+           S
+      /    |    \
+    M      +     S
+  /              |
+N                M
+|           /    |    \
+4          N    and    M
+
+S -> M + S -> N + S -> 4 + S -> 4 + M -> 4 + N and M -> 4 + true and M: N turned into true
+
+           S
+      /    |    \
+    M      +     S
+  /              |
+N                M
+|           /    |    \
+4          N    and    M
+           |
+         true
+
+S -> M + S -> N + S -> 4 + S -> 4 + M -> 4 + N and M -> 4 + true and M -> 4 + true and N: M turned into N
+
+           S
+      /    |    \
+    M      +     S
+  /              |
+N                M
+|           /    |    \
+4          N    and    M
+           |           |
+         true          N
+
+S -> M + S -> N + S -> 4 + S -> 4 + M -> 4 + N and M -> 4 + true and M -> 4 + true and N -> 4 + true and false: N turned into false 
+
+           S
+      /    |    \
+    M      +     S
+  /              |
+N                M
+|           /    |    \
+4          N    and    M
+           |           |
+         true          N
+                       |
+                     false
+
+leftmost derivation done! leftmost parse tree done!
+
+Ok, how about ASTs? Way less easily defined, as it's basically in terms of "operators" and "operands" rather than a direct derivation
+So if we agree that x+y is the operator + on the operands x and y, the AST for "x + y" is Add(x,y), visualized like this:
+
+       operator
+       /     \
+operand1     operand2
+
+Let's do the same sequence of steps we did before, now building an AST instead of a parse tree
+
+4 + true and false
+S -> M + S -> N + S -> 4 + S -> 4 + M -> 4 + N and M -> 4 + true and M -> 4 + true and N -> 4 + true and false
+
+S: no operator, let's put a placeholder
+
+         (S)
+
+S -> M + S: (S) is actually an Add operator! acting on whatever (M) is and whatever (S) is. We don't know what those are yet.
+
+          +
+       /     \
+     (M)      (S)
+
+S -> M + S -> N + S: (M) = whatever (N) is. We don't know what that is yet.
+
+          +
+       /     \
+     (N)      (S)
+
+S -> M + S -> N + S -> 4 + S: (N) = 4. Thank god, something we know! 4!
+
+          +
+       /     \
+     4       (S)
+
+S -> M + S -> N + S -> 4 + S -> 4 + M: (S) = whatever (M) is. We don't know what that is yet.
+
+          +
+       /     \
+     4       (M)
+
+S -> M + S -> N + S -> 4 + S -> 4 + M -> 4 + N and M: (M) = And operator! acting on whatever (N) is and whatever (M) is. We don't know what those are yet.
+
+          +
+       /     \
+     4        and
+             /   \
+           (N)    (M)
+
+S -> M + S -> N + S -> 4 + S -> 4 + M -> 4 + N and M -> 4 + true and M: (N) is true!
+
+          +
+       /     \
+     4        and
+             /   \
+          true    (M)
+
+S -> M + S -> N + S -> 4 + S -> 4 + M -> 4 + N and M -> 4 + true and M -> 4 + true and N: (M) is whatever (N) is.
+
+          +
+       /     \
+     4        and
+             /   \
+          true    (N)
+
+S -> M + S -> N + S -> 4 + S -> 4 + M -> 4 + N and M -> 4 + true and M -> 4 + true and N -> 4 + true and false: (N) is false!
+
+          +
+       /     \
+     4        and
+             /   \
+          true   false
+
+If you are asked for a derivation, DO A DERIVATION (*not* a parse tree or abstract syntax tree)
+If you are asked for a parse tree, DO A PARSE TREE (*not* a derivation or abstract syntax tree)
+If you are asked for an abstract syntax tree, DO AN AST (*not* a derivation or parse tree)
+
+These are not the same, and though you may get some small amount of partial credit, don't count on it.
+
+
+Example problems I liked/made up:
+Q: Does it fail at lexing stage, parsing stage, evaluating stage, or pass completely?
+
+1: Classic case!
+
+E → M and E | M or E | M
+M → N + M | N − M | N
+N → 1 | 2 | 3 | 4 | true | false | (E)
+
+1.a: 1 + 2 - (true and false)
+1.b: true + {3 - 2} 
+1.c: 1 * 3
+1.d: 22
+
+1.a: eval
+1.b: lex
+1.c: lex
+1.d: parse
+
+2: It could be stupid!
+
+E → M and G | M or G | M
+M → N + M | N − M | N
+N → 1 | 2 | 3 | 4
+G → true | false
+
+2.a: true and false
+2.b: true and true and false
+2.c: 1 + 2
+2.d: 1 + false
+2.e: (true)
+
+2.a: parse
+2.b: parse
+2.c: succeeds
+2.d: parse
+2.e: lex
+
+3: It could be gross!
+
+E → + E E | ∗ E E | sq E | ex p E E | and E E |or E E | N
+N → 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | true | false
+
+3.a: - + 1 23
+3.b: true and false or true
+3.c: and true or false false
+3.d: * 2 and true false
+
+3.a: lex
+3.b: parse
+3.c: succeeds
+3.d: eval
+
+TL;DR:
+
+Does it fail lexer = are all the symbols somewhere in the Grammar?
+    (ex: it's a string but grammar does not allow strings, it's a + but grammar only defines * and -, it's a 5 but grammar only defines 4, etc.)
+Does it fail parser = can you make a derivation for it using this Grammar?
+    (just make a derivation for it. they should be short and simple.)
+Does it fail evaluator = given the defined behavior, could the operations succeed? 
+    (ex: is it ever trying to + things that are not two bools, ^ things that are not two strings, etc.)
+
