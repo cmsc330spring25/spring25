@@ -21,3 +21,4 @@
 
 ## Review
 - [Exam 1](https://github.com/cmsc330spring25/spring25/tree/main/course-files/review/Exam1-Review)
+- [Exam 2](https://github.com/cmsc330spring25/spring25/tree/main/course-files/review/Exam2-Review)
