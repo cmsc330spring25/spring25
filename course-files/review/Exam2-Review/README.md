@@ -1,3 +1,9 @@
+# Recording
+
+[Link](https://umd.zoom.us/rec/share/WGt4qy2e7UdQDd12i59N05CCG8fbrQtS-vKsABuua5u7B8ttlHAN2l3rutv5Evqd.HFnTiTiopLM15-4r?startTime=1744149092000)
+
+Passcode: My8k?7^S
+
 # Exam 2 Review Session
 
 ## Sections
