@@ -174,7 +174,7 @@ type ast = Value of string | Add of ast * ast | Sub of ast * ast
 let rec evaluator tree = 
     let rec lookup v env = match env with
       (x,y)::xs -> if x = v then y else lookup v xs
-      |[] -> raise ("undefined variable")
+      |[] -> raise Failure("undefined variable") in
     let rec eval env t = match t with
       |Value(s) -> int_of_string s
       |Var(s) -> lookup s env
