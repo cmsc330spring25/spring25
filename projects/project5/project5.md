@@ -1,4 +1,4 @@
-my# Project 5: SmallC Optimizer and Type Checker
+# Project 5: SmallC Optimizer and Type Checker
 
 > [!NOTE]
 > **Due**: Thursday April 17, 2025\
@@ -350,10 +350,10 @@ typecheck (Assign("x",Unknown_Type(0),Value))
 
 (* int main(){
     x = read();
-    y = x && (x + 3)
+    y = x && (x < 3)
 }*)
 typecheck (Seq(Assign("x",Unknown_Type(0),Value),
-          Assign("y",Bool_Type,Binop(And,ID("x"),Binop(Less,ID("x",Int(3))))))) = true
+          Assign("y",Bool_Type,Binop(And,ID("x"),Binop(Less,ID("x"),Int(3))))))) = true
 ```
 It would be the type inferencer's job to figure out if this is okay or not. 
 ### Type Inferencer
