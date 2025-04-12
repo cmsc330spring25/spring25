@@ -327,7 +327,7 @@ Below is the AST type `expr`, which is returned by the parser. We have provided 
 For example:
 ```ocaml
 typecheck (Assign("x",Int_Type,Binop(Add,Int(3),Int(5)))) => true
-typecheck (Assign("y",Bool_Type,Binop(Equals,Int(5),Int(3)))) => true
+typecheck (Assign("y",Bool_Type,Binop(Equal,Int(5),Int(3)))) => true
 typecheck (Assign("z",Bool_Type,Int(4)) => (* TypeError *)
 typecheck (Assign("x",Int_Type,Binop(Add,Int(3),Bool(true))) => (* TypeError *)
 typecheck (Assign("y",Int_Type,Binop(Add,Int(3),ID("x"))) => (* DeclareError *)
