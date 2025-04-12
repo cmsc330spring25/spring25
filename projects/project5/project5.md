@@ -322,6 +322,7 @@ Below is the AST type `expr`, which is returned by the parser. We have provided 
 * **Exception:** Throws a `DeclareError` if there is an unbound variable. 
 * **Assumptions:**
   - Every variable name will be unique (no shadowing).
+  - The given type in the Ast for any variable will be consistent throughout the same program. 
 
 For example:
 ```ocaml
@@ -330,10 +331,15 @@ typecheck Assign("y",Bool_Type,Binop(Equals,Int(5),Int(3))) => true
 typecheck Assign("z",Bool_Type,Int(4)) => (* TypeError *)
 typecheck Assign("x",Int_Type,Binop(Add,Int(3),Bool(true))) => (* TypeError *)
 typecheck Assign("y",Int_Type,Binop(Add,Int(3),ID("x"))) => (* DeclareError *)
+
+typecheck Seq(Assign("x",Int_Type,Int(3)),Assign("x",Int_Type,Bool(true))) => (* Type Error *)
+typecheck Seq(Assign("x",Bool_Type,Int(3)),Assign("x",Bool_Type,Bool(true))) => (* Type Error *)
+typecheck Seq(Assign("x",Unknown_Type(0),Int(3)),Assign("x",Unknown_Type(0),Bool(true))) => true (* see below about Unknown_Type *)
+typecheck Seq(Assign("x",Int_Type,Int(3)),Assign("x",Bool_Type,Bool(true))) => (* Will never occur due to second assumption *)
 ```
 
-#### Subtyping
-The result type of `Read()` should be an `Unknown_Type`. `Int_Type` and `Bool_Type` are subtypes of this, so the following should all type check:
+#### Unknown_Type
+The result type of `Read()` should be an `Unknown_Type`. `Unknown_Type` can be used iterchangabley with `Int_Type` and `Bool_Type`, so the following should all type check:
 ```ocaml
 (* int main(){
     x = read();
@@ -341,7 +347,15 @@ The result type of `Read()` should be an `Unknown_Type`. `Int_Type` and `Bool_Ty
 typecheck Assign("x",Int_Type,Value)
 typecheck Assign("x",Bool_Type,Value)
 typecheck Assign("x",Unknown_Type(0),Value)
+
+(* int main(){
+    x = read();
+    y = x && (x + 3)
+}*)
+typecheck Seq(Assign("x",Unknown_Type(0),Value),
+          Assign("y",Bool_Type,Binop(And,ID("x"),Binop(Add,ID("x",Int(3)))))) = true
 ```
+It would be the type inferencer's job to figure out if this is okay or not. 
 ### Type Inferencer
 
 #### `inference: stmt -> stmt`
