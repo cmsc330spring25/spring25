@@ -110,7 +110,7 @@ Updated `stmt` CFG:
   - The AST represents a well typed program. No `TypeErrors` or `DeclareErrors`.
 ```ocaml
 optimize (parse_expr "int main(){x = 1 + 2;}") => Assign("x",Int_Type,Int(3))
-optimize (parse_expr "int main(){x = 3/0}") => (* DivByZeroError *)
+optimize (parse_expr "int main(){x = 3/0;}") => (* DivByZeroError *)
 optimize (parse_expr "int main(){x = y + 3;}") => (* DeclareError)
 ```
 
