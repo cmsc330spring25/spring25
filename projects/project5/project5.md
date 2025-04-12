@@ -1,7 +1,7 @@
 # Project 5: SmallC Optimizer and Type Checker
 
 > [!NOTE]
-> **Due**: Thursday April 17, 2025
+> **Due**: Thursday April 17, 2025\
 > **Points**: 35 public, 35 semipublic, 30 secret 
 
 > [!NOTE]
@@ -26,7 +26,7 @@ The changes to the SmallC AST are as follows:
 - Updated the `data_type` variant to include a `Unknown_Type` value.
 - Added a `Value` value to the `expr`  type
 - Updated the `Assign` value from the `stmt` type
-- Removed the `Declare` value from the `stmt` type 
+- Removed the `Declare` value from the `stmt` type
 
 You can see the updated variants and CFGS below. We will discuss what each of these changes affect in the relevant section of the project.
 Updated `data_type` type:
@@ -339,7 +339,7 @@ typecheck Seq(Assign("x",Int_Type,Int(3)),Assign("x",Bool_Type,Bool(true))) => (
 ```
 
 #### Unknown_Type
-The result type of `Read()` should be an `Unknown_Type`. `Unknown_Type` can be used iterchangabley with `Int_Type` and `Bool_Type`, so the following should all type check:
+The result type of `Read()` should be an `Unknown_Type`. `Unknown_Type` can be used interchangabley with `Int_Type` and `Bool_Type`, so the following should all type check:
 ```ocaml
 (* int main(){
     x = read();
