@@ -107,7 +107,7 @@ Updated `stmt` CFG:
 * **Exception:** Throws a `DivByZeroError` if division by zero occurs.
 * **Exception:** Throws a `DeclareError` if there is an unbound variable. 
 * **Assumptions:**
-  - The AST represents a well typed program. No `TypeErrors` or `DeclareErrors`.
+  - The AST represents a well typed program. No `TypeErrors`.
 ```ocaml
 optimize (parse_expr "int main(){x = 1 + 2;}") => Assign("x",Unknown_Type(0),Int(3))
 optimize (parse_expr "int main(){x = 3/0;}") => (* DivByZeroError *)
