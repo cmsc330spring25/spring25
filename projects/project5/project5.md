@@ -328,9 +328,9 @@ For example:
 ```ocaml
 typecheck (Assign("x",Int_Type,Binop(Add,Int(3),Int(5)))) => true
 typecheck (Assign("y",Bool_Type,Binop(Equal,Int(5),Int(3)))) => true
-typecheck (Assign("z",Bool_Type,Int(4)) => (* TypeError *)
-typecheck (Assign("x",Int_Type,Binop(Add,Int(3),Bool(true))) => (* TypeError *)
-typecheck (Assign("y",Int_Type,Binop(Add,Int(3),ID("x"))) => (* DeclareError *)
+typecheck (Assign("z",Bool_Type,Int(4))) => (* TypeError *)
+typecheck (Assign("x",Int_Type,Binop(Add,Int(3),Bool(true)))) => (* TypeError *)
+typecheck (Assign("y",Int_Type,Binop(Add,Int(3),ID("x")))) => (* DeclareError *)
 
 typecheck (Seq(Assign("x",Int_Type,Int(3)),Assign("x",Int_Type,Bool(true)))) => (* Type Error *)
 typecheck (Seq(Assign("x",Bool_Type,Int(3)),Assign("x",Bool_Type,Bool(true)))) => (* Type Error *)
