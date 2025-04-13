@@ -367,7 +367,7 @@ It would be the type inferencer's job to figure out if this is okay or not.
 * Examples:
 ```ocaml
 (* int main(){x = 5 + 3;} *)
-inference (Assign("x",Unknown_Type(0),Add(Int(5),Int(3)))) => (Assign("x",Int_Type,Add(Int(5),Int(3))))
+inference (Assign("x",Unknown_Type(0),Binop(Add,Int(5),Int(3)))) => Assign ("x",Int_Type,Binop(Add,Int(5),Int(3)))
 
 (* int main(){x = true;}*)
 inference (Assign("x",Unknown_Type(0),Bool(true))) => (Assign("x",Bool_Type,(Bool(true))))
