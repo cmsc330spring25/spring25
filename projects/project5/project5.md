@@ -376,7 +376,7 @@ inference (Assign("x",Unknown_Type(0),Bool(true))) => (Assign("x",Bool_Type,(Boo
 inference (Seq(Assign("x",Unknown_Type(0),Value),Print(Binop(Add,ID("x"),Int(1))))) => (Seq(Assign("x",Int_Type,Value),Print(Binop(Add,ID("x",Int(1))))))
 
 (* int main(){x = 3;x = true} *)
-inference (Seq(Assign("x",Unknown_Type(0),Int(3),Assign("x",Unknown_Type(1),Bool(true))))) => TypeError
+inference (Seq(Assign("x",Unknown_Type(0),Int(3)),Assign("x",Unknown_Type(1),Bool(true)))) => TypeError
 ```
 
 ### Exceptions
