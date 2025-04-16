@@ -1,7 +1,7 @@
 # Project 5: SmallC Optimizer and Type Checker
 
 > [!NOTE]
-> **Due**: Thursday April 17, 2025\
+> **Due**: ~~Thursday April 17, 2025~~Saturday April 19, 2025\
 > **Points**: 35 public, 35 semipublic, 30 secret 
 
 > [!NOTE]
