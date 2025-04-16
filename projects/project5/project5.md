@@ -402,6 +402,10 @@ As per usual, you may not use any imperative ocaml except for the provided `fres
 
 ### Testing & Submitting
 
+#### To run a single test
+- First comment out the `argv` array in the call to `run` in `public.ml`.
+- Then, the command `_build/default/test/public/public.exe test --compact 'optimize' 'x'` would run test `x` in the optimize test array, again found in `public.ml`. The parameter that has `optimize` in that call can be changed to `typecheck` or `infer` to run other tests individually as well.
+
 Submit by running `submit` after pushing your code to GitHub. 
 
 All tests will be run on direct calls to your code, comparing your return values to the expected return values. Any other output (e.g., for your own debugging) will be ignored. We recommend using relevant error messages when raising these exceptions in order to make debugging easier. We are not requiring intelligent messages that pinpoint an error to help a programmer debug, but as you do this project you might find you see where you could add those.
