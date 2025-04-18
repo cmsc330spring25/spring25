@@ -7,6 +7,7 @@
 - Project 3 ([README](https://github.com/cmsc330spring25/spring25/blob/main/projects/project3/project3.md))
 - Project 4 ([README](https://github.com/cmsc330spring25/spring25/tree/main/projects/project4))
 - Project 5 ([README](https://github.com/cmsc330spring25/spring25/tree/main/projects/project5))
+- Project 6 ([README](https://github.com/cmsc330spring25/spring25/tree/main/projects/project6))
 
 ## Discussions
 - [Discussion 1](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d1_git)
