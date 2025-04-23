@@ -192,9 +192,9 @@ assert_eq!(in_range([], 2..11), 0);
 
 ### `pub fn capitalize_words<'a>(wordlist: impl IntoIterator<Item = &'a mut String>)`
 
-Given an iterator over mutable strings, this function will capitalize the
+This function takes in a value that can be converted into an iterator of mutable references to strings. It will capitalize the
 **first letter** of each word in the iterator. Note that this function returns a
-unit type. You must modify the `String`s **in place**. You may assume that you
+unit type - you must modify the `String`s referenced by `wordlist`, and so should not return anything new. You may assume that you
 will not be asked to capitalize numbers or special characters; inputs are
 guaranteed to start with an ASCII letter.
 
