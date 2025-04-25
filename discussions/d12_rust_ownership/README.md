@@ -54,6 +54,56 @@ fn custom_len(str: &String) -> usize {
 
 Now, the len function borrows x, then returns ownership once it has completed. 
 
+## Scopes/Lifetimes
+
+**Scopes** of a variable extend as far as defined/freed (between curly braces). **Lifetimes** span as long as the variable lives. A variable's lifetime ends the line after the last time it is used.
+
+```rust
+{
+    let x = 3; 
+    { // x lifetime ends
+        let y = 4;
+        println!("{}", y);
+    } // scope of y ends, y lifetime ends
+    
+    let z = 5;
+    println!("Hello World!"); // z lifetime ends
+} // scope of x, z ends
+```
+
+We cannot have an immutable/mutable reference at the same time. 
+```rust
+fn main() {
+    let mut x = String::from("Hello");
+    x.push_str(" World");
+    {
+        let y = &x;
+        // x.push_str(", I am an alien!"); // error! x is turned to an immutable reference
+        println!("{} and {} can only read, no write", x, y);
+        x.push_str(", I am an alien!"); // y lifetime ends so this is ok
+    }
+    
+    x.push_str("!");
+    println!("{} is still valid", x);
+}
+```
+
+In the above, x becomes immutable for as long as y lives (until line 6). Here is another example with &mut.
+
+```rust
+fn main() {
+    let mut s1 = String::from("hello");
+    { 
+        let s2 = &s1;
+        //s2.push_str(" there"); //disallowed; s2 immutable
+    }   //s2 dropped
+    let s3 = &mut s1; //ok since s1 mutable
+    s3.push_str(" there"); //ok since s3 mutable
+    // println!("String is {}",s1); //NOT OK, s3 has mutable borrow
+    println!("String is {}",s3); //ok; 
+    println!("String is {}",s1); //ok; s3 dropped
+}
+```
 
 ## Exercises
 
