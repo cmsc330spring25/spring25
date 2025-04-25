@@ -21,6 +21,7 @@
 - [Discussion 9](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d9_typechecking)
 - [Discussion 10](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d10_lambda)
 - [Discussion 11](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d11_rust_basics)
+- [Discussion 12](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d12_rust_ownership)
 
 ## Review
 - [Exam 1](https://github.com/cmsc330spring25/spring25/tree/main/course-files/review/Exam1-Review)
