@@ -334,3 +334,7 @@ Memory {
 Diagram of above: 
 
 ![alt text](imgs/i-7.png)
+
+
+## Checkout Link
+[https://classroom.github.com/a/aD7GjbSk](https://classroom.github.com/a/aD7GjbSk)
