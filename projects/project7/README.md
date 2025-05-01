@@ -50,7 +50,9 @@ stack frames have been removed. Neither of these will result in errors, though.
 
 You will return the `RefCountMem` struct representing the state of memory after all of the program actions have been taken. See [About Memory](#about-representation-of-data-in-this-project) for more info on this struct and what it represents. If the reference count ever reaches 0, deallocate that memory (change it to None).
 
-If an index on the heap is referenced, but never references anything itself, it will be `Some([], <rfcount>)`
+If an index on the heap is referenced, but never references anything itself, it will be `Some([], <rfcount>)`. 
+
+If there are multiple Heap Refs to the same heap index, the latter instruction will take precedence and overwrite what was previously stored in that index. 
 
 Examples: 
 
