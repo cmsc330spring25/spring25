@@ -87,7 +87,7 @@ Diagram of each step:
 
 - Ref Stack 8 9
 
-![alt text](imgs/image-9.png)
+![alt text](imgs/fixedgc.png)
 
 - Ref Heap 0 5 2
 
