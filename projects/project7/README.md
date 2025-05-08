@@ -9,7 +9,7 @@ In this project, we will be implementing versions of the *reference counting*, *
 
 This is an individual assignment. You may use functions found in Rust's standard
 library. You may write any helper functions that you wish. 
-You may not use `unsafe` or any external crates.
+You may not use `unsafe` or any external crates other than the `regex` crate.
 
 > [!NOTE]
 > In this project, we represent the stack and heap using vecs, with the semantics changing slightly for each strategy.\
