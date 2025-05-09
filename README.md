@@ -24,6 +24,7 @@
 - [Discussion 11](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d11_rust_basics)
 - [Discussion 12](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d12_rust_ownership)
 - [Discussion 13](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d13_garbage_collection)
+- [Discussion 14](https://github.com/cmsc330spring25/spring25/tree/main/discussions/d14_final_review)
 
 ## Review
 - [Exam 1](https://github.com/cmsc330spring25/spring25/tree/main/course-files/review/Exam1-Review)
