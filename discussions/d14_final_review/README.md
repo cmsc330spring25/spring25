@@ -316,7 +316,7 @@ fn main(){
     1. Compiles
     2. FAILS to compile - Cannot borrow mut from immutable value
     3. FAILS to compile - Two mut borrows exist and used at the same time
-    4. FAILS to compile - Two mut borrows exist and used at the same time
+    4. FAILS to compile - println! tries to borrow x as immutable while y borrows x as mutable 
     5. Compiles - lifetime of y ends before x is used
     6. FAILS to compile - Arguments are not references
     7. Compiles
