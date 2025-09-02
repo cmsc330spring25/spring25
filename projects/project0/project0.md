@@ -1,6 +1,6 @@
 # Project 0: Setup
 
-Due: Sunday, February 9th, 2024 at 11:59 PM
+Due: Monday, September 8th, 2025 at 11:59 PM
 
 This project is simply to get your system ready. Although you will "submit" this project on Gradescope, it is not counted towards your final grade.  The good-faith attempt (GFA) rule **does not apply** to this project.
 
@@ -85,17 +85,17 @@ Next, you will need to clone this repository to your local filesystem.
 **IMPORTANT INFO FOR WINDOWS USERS:** Clone ALL projects into your WSL filesystem, NOT the Windows filesystem. Your path should NOT start with `/mnt` - you can get to the WSL filesystem using `cd ~`
 
 2. Open Terminal
-3. Create a directory for your 330 projects, I recommend `mkdir ~/cmsc330spring25`
+3. Create a directory for your 330 projects, I recommend `mkdir ~/cmsc330fall25`
 4. Clone project 0 into that directory
-    - Navigate to your 330 directory `cd ~/cmsc330spring25` 
-    - Clone the project into your current directory `git clone git@github.com:cmsc330spring25/projectzero-YOUR_GITHUB_USERNAME` (you must edit the link with your github username)
+    - Navigate to your 330 directory `cd ~/cmsc330fall25` 
+    - Clone the project into your current directory `git clone git@github.com:cmsc330fall25/zerothproject-YOUR_GITHUB_USERNAME` (you must edit the link with your github username)
     - You can also find this link by clicking the green "Code" button on your project 0 GitHub page and copying the link under "SSH"
 
-The files in the `projectzero-YOUR_GITHUB_USERNAME` folder will be used for the [Verify Setup](#verify-setup) section at the bottom.
+The files in the `zerothproject-YOUR_GITHUB_USERNAME` folder will be used for the [Verify Setup](#verify-setup) section at the bottom.
 
 ### Verify Setup
 
-To verify that you have the correct versions installed, run `./public.sh` in the `~/cmsc330spring25/projectzero-YOUR_GITHUB_USERNAME/` directory.  You should not get any errors.
+To verify that you have the correct versions installed, run `./public.sh` in the `~/cmsc330fall25/zerothproject-YOUR_GITHUB_USERNAME/` directory.  You should not get any errors.
 
 This will create a file called `p0.report` that will be processed by the autograder in the next steps.
 
@@ -103,7 +103,7 @@ This will create a file called `p0.report` that will be processed by the autogra
 
 Whenever you want to submit your project to Gradescope, you will need to push your latest code changes to your repo. Follow these steps to do so:
 
-First, make sure all your changes are pushed to GitHub using the `git add`, `git commit`, and `git push` commands. We will teach you basic git usage during the first discussion, but you can refer to [these notes](https://bakalian.cs.umd.edu/assets/notes/git.pdf) for assistance. Additionally, you can refer to a [testing repo](https://github.com/CliffBakalian/git-basics) Cliff made, but it's recommended you make your own.
+First, make sure all your changes are pushed to GitHub using the `git add`, `git commit`, and `git push` commands. We will teach you basic git usage during the first discussion, but you can refer to [these notes](https://bakalian.cs.umd.edu/assets/notes/bakalian/cmsc330/git.pdf) for assistance.
 - If you have an author identity error when committing, run the config commands that are shown, filling in your GitHub account email and your name.
 
 Next, to submit your project, you can run `submit` from your project directory.
@@ -185,6 +185,19 @@ passwords and try it again.
 
 You didn't push your changes to GitHub...
 
+## Other Common Errors
+### Missing package xxxx 
+
+Typically when you install a new package, it will install any dependencies it needs. 
+However sometimes either the maintainers assume you already have a dependency
+or a dependency is too system specific to reliably install via generic installation commands.
+
+In this case, you may get an error like `Build failed. xxx not found` or similar. 
+If this happens, try and find a way to install the missing xxx package. 
+
+One common example is bzip2 missing. A simple `brew install bzip2` or `apt-get install bzip2`
+should fix this issue. Please read the output carefully.
+
 ## OS Specific Instructions
 ### Windows
 
@@ -217,7 +230,7 @@ You didn't push your changes to GitHub...
       - **Restart** your shell
       - Ensure you are now on the correct version by running `ocaml -version`
 6. Install OCaml packages
-    - Run `opam install gradescope_submit ocamlfind ounit utop dune qcheck ocamlformat ppx_deriving`
+    - Run `opam install gradescope_submit ocamlfind alcotest ounit utop dune qcheck ocamlformat ppx_deriving`
       - If you get the message "opam believes some required external dependencies are missing", select "Run apt-get to install them"
 7. Install Rust
     - Go to [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and run the installation command provided. Make sure you are running the WSL command provided, *not* downloading Rust for Windows.
@@ -254,7 +267,7 @@ Check the [Special macOS Instructions](#special-macos-instructions) to check if 
       - **Restart** your shell
       - Ensure you are now on the correct version by running `ocaml -version`
 5. Install OCaml packages
-    - Run `opam install gradescope_submit ocamlfind ounit utop dune qcheck ocamlformat ppx_deriving`
+    - Run `opam install gradescope_submit ocamlfind alcotest ounit utop dune qcheck ocamlformat ppx_deriving`
       - If you get the message "opam believes some required external dependencies are missing", select "Run brew to install them"
       - Run `eval $(opam config env)`
 6. Install Rust
@@ -302,7 +315,7 @@ These instructions assume you have a Debian-based system (e.g. Ubuntu) using the
       - **Restart** your shell
       - Ensure you are now on the correct version by running `ocaml -version`
 4. Install OCaml packages
-    - Run `opam install gradescope_submit ocamlfind ounit utop dune qcheck ocamlformat ppx_deriving`
+    - Run `opam install gradescope_submit ocamlfind alcotest ounit utop dune qcheck ocamlformat ppx_deriving`
 5. Install Rust
     - Go to [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and run the installation command provided
     - If prompted, just select the defaults
